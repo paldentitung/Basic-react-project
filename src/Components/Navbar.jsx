@@ -4,7 +4,7 @@ import { useState } from "react";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   return (
-    <header className="flex justify-around space-y-3 p-6 items-center border-[1px] border-b-gray-500 sticky z-10 top-0 flex-col md:flex-row">
+    <header className="flex justify-around space-y-3 p-6 items-center border-[1px] border-b-gray-500 sticky z-10 top-0 flex-col md:flex-row bg-white">
       <div className="flex space-x-5 items-center">
         <div className="text-2xl font-bold">Projects</div>
         <div className="block md:hidden">
