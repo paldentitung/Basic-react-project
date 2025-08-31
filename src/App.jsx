@@ -6,6 +6,8 @@ import JokeGenerator from "./Components/JokeGenerator";
 
 import QuizApp from "./Components/QuizApp";
 import Todo from "./Components/Todo";
+import Projects from "./Components/Projects";
+import ProjectDetailsCard from "./Components/ProjectDetailsCard";
 import { Route, Routes } from "react-router-dom";
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/joke-generator" element={<JokeGenerator />} />
         <Route path="/quiz-app" element={<QuizApp />} />
         <Route path="/todo" element={<Todo />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/projectsdetails/:id" element={<ProjectDetailsCard />} />
       </Routes>
     </>
   );
