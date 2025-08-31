@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import { useState } from "react";
-const QuizApp = () => {
+const QuizApp = ({ darkMode }) => {
   const [score, showScore] = useState(0);
   const [answers, setAnswers] = useState({});
   const [finished, setFinished] = useState(false);
@@ -85,7 +85,7 @@ const QuizApp = () => {
 
   return (
     <>
-      <div className="h-[80vh] flex items-center flex-col space-y-4 mt-10 p-3">
+      <div className="min-h-screen flex items-center flex-col space-y-4 mt-10 p-3">
         <div className="text-3xl font-bold font-mono">Quiz App</div>
         <div className="flex flex-col items-center gap-3 w-full">
           {finished ? (
@@ -106,7 +106,10 @@ const QuizApp = () => {
             <>
               {questions.map((question, index) => (
                 <div
-                  className="flex flex-col  p-4 w-full max-w-[700px] shadow-md shadow-[rgb(200,200,200)]"
+                  // className="shadow-[rgb(200,200,200)]"
+                  className={`flex flex-col  p-4 w-full max-w-[700px] shadow-md  ${
+                    darkMode ? "shadow-black" : "shadow-[rgb(200,200,200)]"
+                  }`}
                   key={index}
                 >
                   <span className="text-lg ">{question.question}</span>

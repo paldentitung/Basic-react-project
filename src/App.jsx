@@ -9,19 +9,41 @@ import Todo from "./Components/Todo";
 import Projects from "./Components/Projects";
 import ProjectDetailsCard from "./Components/ProjectDetailsCard";
 import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Counter" element={<Counter />} />
-        <Route path="/joke-generator" element={<JokeGenerator />} />
-        <Route path="/quiz-app" element={<QuizApp />} />
-        <Route path="/todo" element={<Todo />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projectsdetails/:id" element={<ProjectDetailsCard />} />
-      </Routes>
+      <div>
+        <div
+          className={
+            darkMode
+              ? "bg-gray-900 text-white min-h-screen"
+              : "bg-white text-black min-h-"
+          }
+        >
+          <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Counter" element={<Counter darkMode={darkMode} />} />
+            <Route
+              path="/joke-generator"
+              element={<JokeGenerator darkMode={darkMode} />}
+            />
+            <Route path="/quiz-app" element={<QuizApp darkMode={darkMode} />} />
+            <Route path="/todo" element={<Todo darkMode={darkMode} />} />
+            <Route
+              path="/projects"
+              element={<Projects darkMode={darkMode} />}
+            />
+            <Route
+              path="/projectsdetails/:id"
+              element={<ProjectDetailsCard darkMode={darkMode} />}
+            />
+          </Routes>
+        </div>
+      </div>
     </>
   );
 };

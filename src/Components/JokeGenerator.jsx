@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import { useState, useEffect } from "react";
-const JokeGenerator = () => {
+const JokeGenerator = ({ darkMode }) => {
   const [joke, setJoke] = useState({ setup: "", punchline: "" });
   const [punchline, showPunchline] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -33,7 +33,11 @@ const JokeGenerator = () => {
         <div className=" text-[28px] sm:text-4xl font-black font-mono text-nowrap">
           Joke Generator
         </div>
-        <div className="w-full max-w-[400px] min-h-[200px] max-h-[300px] border-1  flex flex-col items-center p-7  shadow-md shadow-[rgb(200,200,200)] overflow-auto transition-all duration-150 ">
+        <div
+          className={`w-full max-w-[400px] min-h-[200px] max-h-[300px] border-1  flex flex-col items-center p-7 overflow-auto shadow-md transition-all duration-150 ${
+            darkMode ? "shadow-black" : "shadow-[rgb(200,200,200)] "
+          } `}
+        >
           <div className="flex flex-col text-center flex-1">
             {loading ? (
               <span>loading...</span>

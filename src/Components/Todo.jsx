@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import { useState } from "react";
-const Todo = () => {
+const Todo = ({ darkMode }) => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [showToast, setShowToast] = useState(false);
@@ -34,7 +34,11 @@ const Todo = () => {
     <>
       <div className="h-[80vh] flex items-center flex-col mt-10 p-2">
         <div className="text-4xl font-mono font-semibold">To do</div>
-        <div className="w-full max-w-[500px] h-[500px]  shadow-md shadow-[rgb(200,200,200)] flex  items-center flex-col p-5  space-y-5 rounded-md">
+        <div
+          className={`w-full max-w-[500px] h-[500px]  shadow-md  flex  items-center flex-col p-5  space-y-5 rounded-md ${
+            darkMode ? "border-[1px]" : "shadow-[rgb(200,200,200)]"
+          } `}
+        >
           <div className=" flex gap-2 w-full">
             <input
               type="text"

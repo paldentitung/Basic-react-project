@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-const Projects = (pros) => {
+const Projects = () => {
   return (
     <>
       <div className="flex items-center justify-around flex-wrap  place-items-center w-full h-auto mt-10">
