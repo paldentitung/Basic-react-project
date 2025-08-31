@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-const ProjectDetailsCard = () => {
+const ProjectDetailsCard = ({ darkMode }) => {
   const projects = [
     {
       id: "1",
@@ -62,7 +62,15 @@ const ProjectDetailsCard = () => {
         </Link>
       </div>
       <div className="flex justify-center items-center h-[70vh] w-full p-3">
-        <div className="flex h-[400px]  flex-col p-3 space-y-4 justify-center items-center shadow-lg shadow-[rgb(200,200,200)] w-full max-w-[400px]  rounded-lg  transition-all duration-200 hover:scale-105 hover:cursor-pointer ">
+        <div
+          className={`flex h-[400px] flex-col p-3 space-y-4 justify-center items-center 
+              w-full max-w-[400px] rounded-lg transition-all duration-200 hover:scale-105 hover:cursor-pointer
+              ${
+                darkMode
+                  ? "bg-gray-800 text-white shadow-black/50 border border-gray-700"
+                  : "bg-white text-black shadow-gray-300 border border-gray-200"
+              }`}
+        >
           <div className="text-center">
             <div className="text-2xl font-mono font-bold">{project.name}</div>
             <div>{project.desc}</div>
@@ -78,7 +86,10 @@ const ProjectDetailsCard = () => {
           </div>
           <div className="flex space-x-4">
             {project.techused.map((tech, index) => (
-              <span key={index} className="py-2 px-4 bg-yellow-100 rounded">
+              <span
+                key={index}
+                className="py-2 px-4  border-[1px] border-white rounded"
+              >
                 {tech}
               </span>
             ))}
