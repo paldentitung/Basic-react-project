@@ -39,15 +39,17 @@ const Todo = ({ darkMode }) => {
             darkMode ? "border-[1px]" : "shadow-[rgb(200,200,200)]"
           } `}
         >
-          <div className=" flex gap-2 w-full">
+          <div className=" flex gap-2 w-full flex-col md:flex-row">
             <input
               type="text"
-              className="border-[1px] flex-1 p-2"
+              className="border-[1px]  md:w-3/4 p-2"
               onChange={(e) => setNewTask(e.target.value)}
               placeholder="enter the task here.."
               value={newTask}
             />
-            <Button name="Add" onClick={addTask} />
+            <div className="w-[100px] flex items-center">
+              <Button name="Add" onClick={addTask} />
+            </div>
           </div>
           <div className=" w-full">
             <ul className="w-full flex flex-col space-y-4">

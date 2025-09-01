@@ -89,7 +89,7 @@ const QuizApp = ({ darkMode }) => {
         <div className="text-3xl font-bold font-mono">Quiz App</div>
         <div className="flex flex-col items-center gap-3 w-full">
           {finished ? (
-            <div className="flex flex-col p-2 gap-3 bg-green-100 w-full max-w-[300px] text-center ">
+            <div className="flex flex-col p-2 gap-3  w-full max-w-[300px] text-center ">
               <span className="text-[18px]">
                 You score is {`${score} out of ${questions.length} `}
               </span>
