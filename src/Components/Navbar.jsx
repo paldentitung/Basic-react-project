@@ -48,13 +48,18 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           </li>
         </ul>
       </nav>
-      <button
+
+      {/* toggle mode */}
+      <div
         onClick={() => setDarkMode(!darkMode)}
-        className="px-4 py-2 flex items-center gap-2 font-semibold rounded-md border
-             bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
+        className=" flex items-center p-1 w-16 h-8 border rounded-full hover:cursor-pointer"
       >
-        {darkMode ? "Light Mode 🌞" : "Dark Mode 🌙"}
-      </button>
+        <span
+          className={`bg-blue-500 w-6 h-6 rounded-full transition-all duration-200 ${
+            darkMode ? "translate-x-0 bg-white" : "translate-x-7"
+          } `}
+        ></span>
+      </div>
 
       {menu && (
         <nav className="block md:hidden">
