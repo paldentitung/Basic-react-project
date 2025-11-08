@@ -56,7 +56,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       >
         <span
           className={`bg-blue-500 w-6 h-6 rounded-full transition-all duration-200 ${
-            darkMode ? "translate-x-0 bg-white" : "translate-x-7"
+            darkMode ? "translate-x-7 bg-white" : "translate-x-0"
           } `}
         ></span>
       </div>
